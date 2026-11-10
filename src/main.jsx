@@ -6,34 +6,29 @@ import { configFromSearch, configToSearch } from './navigation.js';
 import './style.css';
 
 function App() {
-  const [location, setLocation] = useState(() => ({
-    pathname: window.location.pathname,
-    search: window.location.search,
-  }));
+  const [route, setRoute] = useState(() => window.location.hash);
 
   useEffect(() => {
-    const onPopState = () => setLocation({
-      pathname: window.location.pathname,
-      search: window.location.search,
-    });
-    window.addEventListener('popstate', onPopState);
-    return () => window.removeEventListener('popstate', onPopState);
+    const onHashChange = () => setRoute(window.location.hash);
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
-  function navigate(path) {
-    window.history.pushState(null, '', path);
-    setLocation({ pathname: window.location.pathname, search: window.location.search });
+  function navigate(nextRoute) {
+    window.location.hash = nextRoute;
+    setRoute(window.location.hash);
     window.scrollTo(0, 0);
   }
 
-  const config = configFromSearch(location.search);
+  const [pathname, search = ''] = route.slice(1).split('?');
+  const config = configFromSearch(search);
 
-  if (location.pathname === '/game' && config) {
-    return <GameScreen key={location.search} config={config}
+  if (pathname === '/game' && config) {
+    return <GameScreen key={search} config={config}
       onReset={() => navigate(`/?${configToSearch(config)}`)} />;
   }
 
-  return <SetupScreen key={location.search} initialConfig={location.pathname === '/' ? config : null}
+  return <SetupScreen key={search} initialConfig={pathname === '/' ? config : null}
     onStart={(nextConfig) => navigate(`/game?${configToSearch(nextConfig)}`)} />;
 }
 

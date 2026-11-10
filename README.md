@@ -2,7 +2,7 @@
 
 A local two to four player dots-and-boxes game built with React and Vite. Choose a 10 × 10 or 15 × 15 dot grid, or set custom rows and columns from 9 to 20. Edit player names and choose a unique color for each player, then tap or click a gap between neighboring dots to place a line. Completing a box claims it and gives you another turn.
 
-Starting a game navigates to `/game` with the player names, colors, and grid size in the URL. A game link opens directly or after a refresh with the same setup. Browser Back and Forward navigate between setup and game. When deploying the production build, configure the host to serve `index.html` for `/game` requests.
+Starting a game adds `#/game` with the player names, colors, and grid size in the URL. A game link opens directly or after a refresh with the same setup. Browser Back and Forward navigate between setup and game. The hash route works on GitHub Pages without server rewrites.
 
 ## Run on your device
 
@@ -26,6 +26,10 @@ npm run build
 ```
 
 The production files are written to `dist/`.
+
+## Deploy to GitHub Pages
+
+Run `npm run deploy`, then set the repository's **Settings → Pages → Build and deployment** source to **Deploy from a branch**, with branch **gh-pages** and folder **/(root)**. Open `https://SouravJha2003.github.io/connect-D/` after Pages finishes publishing.
 
 ## Project structure
 
