@@ -1,18 +1,22 @@
 {
   "name": "connect-d",
+  "homepage": "https://SouravJha2003.github.io/connectd",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "test": "node --test src/*.test.js"
+    "test": "node --test src/*.test.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "vite": "7.3.1"
   }
 }
