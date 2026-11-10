@@ -29,7 +29,7 @@ The production files are written to `dist/`.
 
 ## Deploy to GitHub Pages
 
-Run `npm run deploy`, then set the repository's **Settings → Pages → Build and deployment** source to **Deploy from a branch**, with branch **gh-pages** and folder **/(root)**. Open `https://SouravJha2003.github.io/connect-D/` after Pages finishes publishing.
+Run `npm run deploy`, then set the repository's **Settings → Pages → Build and deployment** source to **Deploy from a branch**, with branch **gh-pages** and folder **/(root)**. The repository is currently named `connectd`, so open `https://SouravJha2003.github.io/connectd/` after Pages finishes publishing. Pushing to `main` alone does not update `gh-pages`.
 
 ## Project structure
 
