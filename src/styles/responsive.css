@@ -1,0 +1,56 @@
+@media (max-width: 900px) {
+  .welcome-layout { grid-template-columns: 1fr; gap: 38px; max-width: 660px; padding-top: 35px; }
+  .welcome-intro { padding-top: 0; }
+  .preview-art { display: none; }
+  .setup-card { max-width: 540px; width: 100%; }
+  .game-main, .game-main.finished { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; grid-template-areas: 'heading' 'scores' 'board' 'actions'; gap: 16px; max-width: 800px; min-height: 0; padding: 30px 20px 50px; }
+  .game-main.finished { grid-template-areas: 'heading' 'board' 'actions'; }
+  .game-heading { padding: 0; }
+  .score-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .score-strip.players-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .score-strip.players-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .score-card { padding: 11px 9px 11px 34px; }
+  .score-color-box { left: 10px; width: 14px; height: 14px; }
+  .score-card-name { font-size: clamp(14px, 2.3vw, 19px); }
+  .score-number { font-size: clamp(22px, 3vw, 30px); }
+  .game-panel { display: block; height: auto; min-height: 0; }
+  .board-viewport { justify-content: flex-start; height: auto; overflow: auto; }
+  .board { height: auto; }
+  .game-actions, .end-controls { margin-top: 0; }
+  .game-actions, .end-actions { flex-direction: row; }
+  .game-actions button, .end-actions button { width: 50%; }
+}
+
+@media (max-width: 620px) {
+  .site-header { height: 68px; padding: 0 18px; }
+  .logo { font-size: 22px; }
+  .header-note { display: none; }
+  .welcome-layout { padding: 34px 17px 55px; }
+  .welcome-intro h1 { font-size: clamp(39px, 10vw, 56px); letter-spacing: -2.8px; }
+  .welcome-intro > p { font-size: 14px; }
+  .setup-card { padding: 23px 19px; }
+  .segmented button { font-size: 12px; }
+  .player-field { min-height: 66px; }
+  .player-badge { width: 38px; height: 38px; font-size: 17px; }
+  .player-label input { font-size: 17px; }
+  .edit-symbol { width: 38px; }
+  .game-main { padding: 28px 13px 50px; }
+  .game-main.finished { padding: 28px 13px 50px; }
+  .game-counter { font-size: 21px; }
+  .score-strip { gap: 6px; }
+  .score-strip.players-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .score-card { min-height: 70px; gap: 5px; padding: 10px 8px 10px 27px; border-radius: 12px; }
+  .score-color-box { left: 8px; width: 12px; height: 12px; }
+  .score-card-name { font-size: 15px; }
+  .score-number { font-size: 23px; }
+  .game-panel { border-radius: 18px; }
+  .board-viewport { padding: 9px; margin: 8px; border-radius: 14px; }
+  .board-topline, .board-bottomline { padding: 12px 13px; }
+  .board-bottomline { display: block; line-height: 1.5; }
+  .board-bottomline span + span { display: block; margin-top: 4px; }
+  .game-actions button, .end-actions button { padding: 13px 7px; font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confetti i, .last-line-glow { animation: none; }
+}

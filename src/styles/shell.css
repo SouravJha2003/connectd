@@ -1,0 +1,105 @@
+.site-shell {
+  min-height: 100vh;
+  background: radial-gradient(circle at 12% 16%, #1c2935 0, transparent 36%), #10151e;
+}
+.game-shell {
+  background: radial-gradient(circle at 74% 12%, rgba(var(--active-rgb), .12), transparent 38%), #10151e;
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  height: 84px;
+  padding: 0 36px;
+  margin: auto;
+  border-bottom: 1px solid #ffffff17;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font: 700 25px 'Space Grotesk', sans-serif;
+  letter-spacing: -1.5px;
+}
+.logo > span:last-child span, .header-divider, .site-footer span { color: #ff6875; }
+.logo-icon {
+  position: relative;
+  display: block;
+  width: 29px;
+  height: 29px;
+  border: 2px solid #ff6875;
+  border-radius: 8px;
+  transform: rotate(-12deg);
+}
+.logo-icon i {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ff6875;
+}
+.logo-icon i:nth-child(1) { top: 4px; left: 4px; }
+.logo-icon i:nth-child(2) { top: 4px; right: 4px; }
+.logo-icon i:nth-child(3) { bottom: 4px; left: 4px; }
+.logo-icon i:nth-child(4) { bottom: 4px; right: 4px; }
+.header-note {
+  color: #9099aa;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.header-actions { display: flex; align-items: center; gap: 24px; }
+.setup-link {
+  padding: 8px 0;
+  border: 0;
+  background: none;
+  color: #c8d1de;
+  font-size: 12px;
+  font-weight: 700;
+}
+.setup-link:hover { color: #fff; text-decoration: underline; }
+.header-divider { margin: 0 8px; }
+.site-footer {
+  padding: 24px 15px 30px;
+  color: #818c9d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-align: center;
+}
+.site-footer span { margin: 0 7px; }
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ff8991;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.kicker span { width: 19px; height: 2px; background: currentColor; }
+
+.setup-card, .game-panel, .box-explorer {
+  border: 2px solid #384354;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #293140, #202734 65%, #1c2330);
+  box-shadow: inset 3px 3px 5px #ffffff12, inset -5px -6px 10px #0b101c75,
+    10px 14px 26px #05080ec9;
+}
+
+.start-button, .primary-action {
+  border: 2px solid #ff9198;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #ff8189, #f45262);
+  color: #21191d;
+  font-weight: 800;
+  box-shadow: inset 3px 3px 4px #ffffff58, inset -5px -6px 8px #b62f4573,
+    6px 9px 15px #090d18ab;
+  transition: transform .15s, box-shadow .15s, filter .15s;
+}
+.start-button:hover, .primary-action:hover:not(:disabled) { filter: brightness(1.1); transform: translateY(-2px); }
+.start-button:active, .primary-action:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: inset 4px 5px 8px #a8293b75, inset -2px -2px 5px #ffffff35;
+}
